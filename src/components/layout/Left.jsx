@@ -5,7 +5,7 @@ import Weather from "../common/Weather";
 
 const Left = () => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+    <div className="left_container">
       <Log />
       <Date />
       <Weather />

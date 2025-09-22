@@ -1,19 +1,27 @@
 import { Avatar, Box, Button, Text } from "@radix-ui/themes";
 import Container from "./Container";
 import { useEffect, useState } from "react";
+import NameModal from "./NameModal";
 
 const Log = () => {
   const [name, setname] = useState("guest");
+  const [showNameModal, setShowNameModal] = useState(false);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   useEffect(() => {
-    const name = prompt("별명을 입력해주세요!");
-    setname((prev) => name);
+    setShowNameModal(true);
   }, []);
 
+  const handleNameSubmit = (newName) => {
+    setname(newName);
+  };
+
   const logout = () => {
-    alert("로그아웃 되었습니다!");
-    const name = prompt("새로운 별명을 입력해주세요!");
-    setname((prev) => name);
+    setShowLogoutModal(true);
+  };
+
+  const handleLogoutSubmit = (newName) => {
+    setname(newName);
   };
 
   return (
@@ -39,6 +47,24 @@ const Log = () => {
           LOGOUT
         </Button>
       </Container>
+
+      {/* 초기 별명 입력 모달 */}
+      <NameModal
+        isOpen={showNameModal}
+        onClose={() => setShowNameModal(false)}
+        onSubmit={handleNameSubmit}
+        title="🌟 환영합니다!"
+        placeholder="별명을 입력해주세요"
+      />
+
+      {/* 로그아웃 후 새 별명 입력 모달 */}
+      <NameModal
+        isOpen={showLogoutModal}
+        onClose={() => setShowLogoutModal(false)}
+        onSubmit={handleLogoutSubmit}
+        title="👋 새로운 별명을 입력해주세요"
+        placeholder="새로운 별명을 입력해주세요"
+      />
     </div>
   );
 };

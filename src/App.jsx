@@ -1,21 +1,19 @@
 import { Flex, Quote } from "@radix-ui/themes";
 import Left from "./components/layout/Left";
 import Right from "./components/layout/Right";
+import "./css/responsive.css";
 
 function App() {
   return (
-    <div
+    <div 
+      className="app_container"
       style={{
-        padding: "50px",
-        gap: "20px",
-
-        backgroundImage: `url("winter.jpg")`,
+        backgroundImage: `url(${process.env.PUBLIC_URL}/winter.jpg)`,
         backgroundPosition: "center center",
         backgroundSize: "cover",
-
-        display: "flex",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
       }}
-      className="App"
     >
       <Left />
       <Right />
