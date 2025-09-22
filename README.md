@@ -1,70 +1,151 @@
-# Getting Started with Create React App
+# 🌟 Personal TodoList & Weather Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+개인용 할 일 관리 및 날씨 정보를 제공하는 반응형 웹 애플리케이션입니다.
 
-## Available Scripts
+## ✨ 주요 기능
 
-In the project directory, you can run:
+### 🎯 TodoList 관리
+- **할 일 추가**: 간편한 입력으로 새로운 할 일 추가
+- **할 일 삭제**: 클릭 한 번으로 완료된 할 일 제거
+- **실시간 업데이트**: 즉시 반영되는 할 일 목록
 
-### `npm start`
+### 🌤️ 실시간 날씨 정보
+- **현재 날씨**: 서울 지역 기준 실시간 날씨 정보
+- **체감온도**: 실제 체감 온도 표시
+- **날씨 상태**: 현재 날씨 상태 설명
+- **시각적 아이콘**: 직관적인 날씨 아이콘
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 👤 사용자 인증
+- **별명 설정**: 개인화된 사용자 경험
+- **예쁜 모달**: 현대적인 UI/UX의 모달창
+- **로그아웃 기능**: 새로운 별명으로 재로그인
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 📅 추가 기능
+- **실시간 시계**: 현재 날짜와 시간 표시
+- **일기 작성**: 개인 일기 작성 기능
+- **로그 기록**: 활동 기록 관리
 
-### `npm test`
+## 🎨 디자인 특징
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📱 완전 반응형 디자인
+- **모바일 우선**: 모바일에서 최적화된 경험
+- **태블릿 지원**: 중간 크기 화면에 최적화
+- **데스크톱 호환**: 큰 화면에서도 완벽한 레이아웃
 
-### `npm run build`
+### 🎭 아름다운 UI/UX
+- **겨울 테마**: 아름다운 겨울 배경 이미지
+- **글래스모피즘**: 반투명 효과로 현대적인 느낌
+- **부드러운 애니메이션**: 자연스러운 전환 효과
+- **직관적 인터페이스**: 사용하기 쉬운 디자인
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ 기술 스택
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend**: React 18
+- **UI Library**: Radix UI
+- **Styling**: CSS3 (반응형 디자인)
+- **API**: OpenWeatherMap API
+- **Build Tool**: Create React App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 시작하기
 
-### `npm run eject`
+### 설치 및 실행
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+# 의존성 설치
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 개발 서버 실행
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 빌드
 
-## Learn More
+```bash
+# 프로덕션 빌드
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📁 프로젝트 구조
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── components/
+│   ├── common/
+│   │   ├── Container.jsx      # 공통 컨테이너 컴포넌트
+│   │   ├── Datetime.jsx       # 날짜/시간 표시
+│   │   ├── Diary.jsx          # 일기 작성
+│   │   ├── Log.jsx            # 사용자 로그인/로그아웃
+│   │   ├── NameModal.jsx      # 별명 입력 모달
+│   │   ├── Weather.jsx        # 날씨 정보
+│   │   └── Todolist/
+│   │       ├── Todo.jsx       # 메인 Todo 컴포넌트
+│   │       ├── Todoinput.jsx  # Todo 입력/목록
+│   │       └── Todotitle.jsx  # Todo 제목
+│   └── layout/
+│       ├── Left.jsx           # 왼쪽 레이아웃
+│       └── Right.jsx          # 오른쪽 레이아웃
+├── css/
+│   ├── reset.css              # CSS 리셋
+│   └── responsive.css         # 반응형 스타일
+└── App.jsx                    # 메인 앱 컴포넌트
+```
 
-### Code Splitting
+## 🎯 주요 컴포넌트 설명
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Log.jsx
+- 사용자 인증 및 별명 관리
+- 예쁜 모달창으로 사용자 경험 향상
+- 로그인/로그아웃 기능
 
-### Analyzing the Bundle Size
+### Weather.jsx
+- OpenWeatherMap API 연동
+- 실시간 날씨 정보 표시
+- 서울 지역 기준 날씨 데이터
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Todoinput.jsx
+- 할 일 추가/삭제 기능
+- 실시간 상태 관리
+- 직관적인 사용자 인터페이스
 
-### Making a Progressive Web App
+### NameModal.jsx
+- 재사용 가능한 모달 컴포넌트
+- 애니메이션 효과
+- 반응형 디자인
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📱 반응형 브레이크포인트
 
-### Advanced Configuration
+- **모바일**: 767px 이하
+- **태블릿**: 768px - 1023px
+- **데스크톱**: 1024px 이상
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🎨 색상 팔레트
 
-### Deployment
+- **Primary**: #001F3F (진한 네이비)
+- **Secondary**: #003366 (중간 네이비)
+- **Background**: 반투명 흰색 (rgba(255, 255, 255, 0.9))
+- **Text**: #333333 (진한 회색)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔧 커스터마이징
 
-### `npm run build` fails to minify
+### 날씨 API 설정
+`src/components/common/Weather.jsx`에서 API 키와 지역 좌표를 수정할 수 있습니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 스타일 수정
+`src/css/responsive.css`에서 색상, 레이아웃, 애니메이션을 커스터마이징할 수 있습니다.
+
+### 배경 이미지 변경
+`public/winter.jpg`를 원하는 이미지로 교체하면 됩니다.
+
+## 📄 라이선스
+
+이 프로젝트는 개인 학습 및 포트폴리오 목적으로 제작되었습니다.
+
+## 🤝 기여하기
+
+버그 리포트나 기능 제안은 언제든 환영합니다!
+
+---
+
+**즐거운 할 일 관리 되세요! 🎉**
