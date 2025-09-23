@@ -2,6 +2,7 @@ import { Flex, Quote } from "@radix-ui/themes";
 import Left from "./components/layout/Left";
 import Right from "./components/layout/Right";
 import "./css/responsive.css";
+import "./css/reset.css";
 
 function App() {
   return (

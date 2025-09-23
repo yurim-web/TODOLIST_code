@@ -1,7 +1,18 @@
-import { Text } from "@radix-ui/themes";
+import { Text, Button } from "@radix-ui/themes";
 import Container from "./Container";
+import { useState } from "react";
 
 const Diary = () => {
+  const [diaryText, setDiaryText] = useState("Lucky Vicky 💚");
+  const [inputValue, setInputValue] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!inputValue.trim()) return;
+    setDiaryText(inputValue.trim());
+    setInputValue("");
+  };
+
   return (
     <Container>
       <article>
@@ -24,7 +35,22 @@ const Diary = () => {
             Diary
           </Text>
         </div>
-        <div style={{ padding: "5px 15px", color: "grey" }}>Lucky Vicky 💚</div>
+        <form className="diary_container" onSubmit={handleSubmit}>
+          <div className="diary_input_container">
+            <input
+              className="diary_input"
+              type="text"
+              placeholder="오늘의 한 줄 일기를 입력해보세요"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+            <Button type="submit" variant="solid" className="diary_button">
+              저장
+            </Button>
+          </div>
+        </form>
+
+        <div style={{ padding: "5px 0px", color: "grey", wordBreak: "break-word" }}>내가 입력한 한 줄 일기가 나옵니다!</div>
       </article>
       <img
         style={{ width: "90px", height: "90px", borderRadius: "999px" }}

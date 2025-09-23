@@ -1,53 +1,29 @@
+/* ===========================================
+   기본 스타일 (모든 화면 크기)
+   =========================================== */
+
 /* 반응형 스타일 */
 .app_container {
   padding: 20px;
   gap: 20px;
-  min-height: 100vh;
+  min-height: 1000px;
   display: flex;
   flex-direction: column;
 }
 
-/* 태블릿 이상에서 가로 레이아웃 */
-@media (min-width: 768px) {
-  .app_container {
-    flex-direction: row;
-    padding: 50px;
-  }
-}
-
-/* 모바일에서 세로 레이아웃 */
-@media (max-width: 767px) {
-  .app_container {
-    padding: 10px;
-    gap: 15px;
-  }
-}
-
-/* Left 컴포넌트 반응형 */
+/* Left 컴포넌트 */
 .left_container {
   flex: 1;
   min-width: 0;
 }
 
-@media (max-width: 767px) {
-  .left_container {
-    order: 2;
-  }
-}
-
-/* Right 컴포넌트 반응형 */
+/* Right 컴포넌트 */
 .right_container {
   flex: 1;
   min-width: 0;
 }
 
-@media (max-width: 767px) {
-  .right_container {
-    order: 1;
-  }
-}
-
-/* Weather 컴포넌트 반응형 */
+/* Weather 컴포넌트 */
 .weather_container {
   display: flex;
   flex-direction: column;
@@ -60,14 +36,6 @@
   gap: 5px;
 }
 
-@media (min-width: 480px) {
-  .weather_info {
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-  }
-}
-
 .weather_image {
   width: 100%;
   max-width: 100px;
@@ -76,20 +44,14 @@
   align-self: center;
 }
 
-@media (min-width: 480px) {
-  .weather_image {
-    align-self: flex-start;
-  }
-}
-
-/* Todo 컴포넌트 반응형 */
+/* Todo 컴포넌트 */
 .todo_container {
   width: 100%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  min-height: 400px;
+  min-height: 684px;
 }
 
 .todo_list_container {
@@ -101,16 +63,9 @@
 
 .todo_input_container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
   margin-bottom: 20px;
-}
-
-@media (min-width: 480px) {
-  .todo_input_container {
-    flex-direction: row;
-    align-items: center;
-  }
 }
 
 .todo_input {
@@ -125,7 +80,7 @@
 
 .todo_button {
   background-color: #001F3F !important;
-  padding: 10px 20px !important;
+  padding: 25px 20px !important;
   border-radius: 8px !important;
   color: white !important;
   border: none !important;
@@ -135,6 +90,7 @@
 
 .todo_button:hover {
   background-color: #003366 !important;
+  cursor: pointer;
 }
 
 .todo_list {
@@ -164,7 +120,7 @@
   gap: 8px;
 }
 
-/* Container 컴포넌트 반응형 */
+/* Container 컴포넌트 */
 .container {
   padding: 20px;
   margin-bottom: 20px;
@@ -174,57 +130,74 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 767px) {
-  .container {
-    padding: 15px;
-    margin-bottom: 15px;
-  }
-}
-
-/* Diary 컴포넌트 반응형 */
+/* Diary 컴포넌트 */
 .diary_container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  padding: 10px 0px;
+  width: 100%;
 }
 
-@media (min-width: 480px) {
-  .diary_container {
-    flex-direction: row;
-    align-items: flex-start;
-  }
+.diary_input_container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .diary_input {
   flex: 1;
-  min-width: 0;
+  min-width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.diary_input:focus {
+  outline: none;
+  border-color: #001F3F;
+  box-shadow: 0 0 0 3px rgba(0, 31, 63, 0.1);
 }
 
 .diary_button {
+  background-color: #001F3F !important;
+  color: white !important;
+  border: none !important;
+  height: 40px !important;
+  cursor: pointer !important;
+  border-radius: 8px !important;
+  padding: 0 16px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
   flex-shrink: 0;
+  min-width: 80px;
 }
 
-/* Log 컴포넌트 반응형 */
+.diary_button:hover {
+  background-color: #003366 !important;
+  transform: translateY(-1px);
+}
+
+/* Log 컴포넌트 */
 .log_container {
   max-height: 300px;
   overflow-y: auto;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@media (max-width: 767px) {
-  .log_container {
-    max-height: 200px;
-  }
+.log_content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
 }
 
-/* Datetime 컴포넌트 반응형 */
+/* Datetime 컴포넌트 */
 .datetime_container {
   text-align: center;
-}
-
-@media (max-width: 767px) {
-  .datetime_container {
-    font-size: 0.9em;
-  }
 }
 
 /* 모달 스타일 */
@@ -313,6 +286,7 @@
   background-color: #003366 !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 31, 63, 0.3);
+  cursor: pointer;
 }
 
 .modal_submit_button:disabled {
@@ -337,21 +311,117 @@
   background-color: #f5f5f5 !important;
   border-color: #bbb !important;
   transform: translateY(-2px);
+  cursor: pointer;
 }
 
-/* 모바일에서 모달 반응형 */
+/* ===========================================
+   태블릿 이상 (768px 이상)
+   =========================================== */
+
+@media (min-width: 768px) {
+  .app_container {
+    flex-direction: row;
+    padding: 50px;
+  }
+}
+
+@media (min-width: 480px) {
+  .weather_info {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .weather_image {
+    align-self: flex-start;
+  }
+
+
+}
+
+/* ===========================================
+   모바일 (767px 이하)
+   =========================================== */
+
 @media (max-width: 767px) {
+  .app_container {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .left_container {
+    order: 2;
+  }
+
+  .right_container {
+    order: 2;
+  }
+
+  .container {
+    padding: 15px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+  }
+  .weather_image{    align-self: end;}
+  .diary_input_container {
+   
+    gap: 8px;
+  }
+
+  .diary_input {
+    min-width: 0;
+    height: 45px;
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  .diary_button {
+    width: 100%;
+    height: 50px !important;
+    font-size: 16px;
+  }
+
+  .log_container {
+    max-height: 200px;
+    justify-content: space-between;
+  }
+
+  .datetime_container {
+    font-size: 0.9em;
+  }
+
   .modal_container {
     padding: 20px;
     margin: 20px;
   }
-  
+
   .modal_footer {
     flex-direction: column;
   }
-  
+
   .modal_submit_button,
   .modal_cancel_button {
     width: 100%;
+  }
+}
+
+/* ===========================================
+   소형 모바일 (480px 이하)
+   =========================================== */
+
+@media (max-width: 480px) {
+  .diary_container {
+    padding: 8px 0px;
+  }
+
+  .diary_input {
+    height: 40px;
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  .diary_button {
+    height: 50px !important;
+    font-size: 14px;
   }
 }
